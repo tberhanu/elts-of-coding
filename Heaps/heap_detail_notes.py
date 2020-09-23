@@ -26,8 +26,8 @@ import heapq
 
     Libraries:
     1. heapq.heapify(lst) - transforms the elts in lst into a heap in-place
-    2. heapq.nlargest(k, lst) - returns the K largest elements in lst
-    3. heapq.nsmallest(k, lst) - returns the K smallest elements in lst
+    2. heapq.nlargest(k, lstHeap) - returns the K largest elements in lstHeap
+    3. heapq.nsmallest(k, lstHeap) - returns the K smallest elements in lstHeap
     4. heapq.heappush(myheap, elt) - pushes a new element on the heap
     5. heapq.heapop(myheap) - pops the smallest element from the heap
     6. heapq.heappushpop(myheap, elt) - pushes new elt on the heap, and pops out the smallest elt
