@@ -33,7 +33,9 @@ import heapq
     6. heapq.heappushpop(myheap, elt) - pushes new elt on the heap, and pops out the smallest elt
     7. e = h[0] - returns the smallest element on the heap without popping it out or without deleting.
     Time Complexity:
-        Insertion: O(logN)
+        Insertion: O(log K) where K is the size of the Heap.
+            Note: If want to heapify an array of size N to our Heap, then we need to insert each element to
+                  the Heap which means "Insertion N times", therefore: O(N log K)
         Lookup(max/min): O(1)
         Deletion(max/min): O(logN) as it needs rearrangement after deleting the max/min
         Searching arbitrary key: O(N)
