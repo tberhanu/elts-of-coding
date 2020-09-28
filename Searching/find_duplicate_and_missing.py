@@ -1,5 +1,12 @@
 def find_duplicate_element(arr):
-    pass
+    N = len(arr) - 1 # because we have one number extra as a duplicate
+    result = 1
+    for i in range(2, N + 1):
+        result = result ^ i  # XOR
+    for e in arr:
+        result = result ^ e  # XOR
+    return result
+
 def find_missed_element(arr):
     """
     Assuming you have Numbers from 1 to N=len(arr)=4 like [1, 2, 3, 4] but not neccessarily in sorted order, and one of the
@@ -13,7 +20,13 @@ def find_missed_element(arr):
             [1, 3, 4]. Then every element in the array, except the duplicate or missed element, cancels out each
             other.
     """
-    pass
+    N = len(arr) + 1 # because we missed one number as missed
+    result = 1
+    for i in range(2, N+1):
+        result = result ^ i # XOR
+    for e in arr:
+        result = result ^ e # XOR
+    return result
 
 def find_duplicate_and_missing_elements(arr):
     """
@@ -32,3 +45,15 @@ def find_duplicate_and_missing_elements(arr):
 
     """
     pass
+
+if __name__ == "__main__":
+    arr = [1, 2, 7, 5, 9, 8, 6, 3]
+    missed = find_missed_element(arr)
+    print(missed) # 4
+    arr = [1, 2, 7, 5, 9, 8, 6, 4]
+    missed = find_missed_element(arr)
+    print(missed) # 3
+
+    arr = [9, 6, 1, 2, 4, 7, 5, 9, 3, 8]
+    duplicated = find_duplicate_element(arr)
+    print(duplicated) # 9
