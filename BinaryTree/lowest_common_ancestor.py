@@ -11,10 +11,18 @@ def lca(tree, node1, node2):
 
     Note: Reference for this tree is on page 113.
 
+    Strategy:
+        1. Call recursively for the left tree and right tree back to back.
+        2. If we found the node on the way, then it will return it, otherwise the recursion will continue
+           until reaching the end where it will return None.
+        3. As a result, even though most of the branches return None after bouncing back from the end,
+           we definitely will have two of the branches returning the NODE.
+        4. The Node that recieved from it's right and left branch other than None, then that's the LCA Node.
+
     """
     if tree == node1 or tree == node2:
         return tree
-    if tree is None or is_leaf(tree):
+    if tree is None:
         return None
     lefty = lca(tree.left, node1, node2)
     righty = lca(tree.right, node1, node2)
