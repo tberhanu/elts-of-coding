@@ -23,8 +23,8 @@ def binary_search_iterative(e, arr):
     left = 0
     right = len(arr) - 1
     while left <= right:
-        # mid = left + (right - left) // 2 # the trick to avoid potential overflow
-        mid = (left + right) // 2
+        mid = left + (right - left) // 2 # the trick to avoid potential overflow
+        # mid = (left + right) // 2
         if e > arr[mid]:
             left = mid + 1
         elif e < arr[mid]:
