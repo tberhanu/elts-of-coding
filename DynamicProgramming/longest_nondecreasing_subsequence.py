@@ -18,6 +18,9 @@ Strategy:
     5. Sort the lookup_subseq_length by the VALUE, and get the highest value INDEX.
     6. Once getting the highest value INDEX, track the previous indices index by index, and get all the subsequent
        elements.
+
+    Time: O(N * N)
+    Space: O(N)
 """
 def longest_increasing_subsequents(arr):
     lookup_subsequent_length = {i: 1 for i, e in enumerate(arr)}

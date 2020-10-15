@@ -85,7 +85,6 @@ def get_max_across_center(arr, mid):
             right_max = summed
     return left_max + right_max
 
-
 if __name__ == "__main__":
     arr = [-9, 8, 2, 3, -4, 8]
     result, largest, index = get_maximum_subarray(arr)

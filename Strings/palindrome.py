@@ -5,8 +5,12 @@ def is_palindromic2(s):
 def is_palindromic3(s):
     # s[~i] is s[-(i + 1)]
     return all(s[i] == s[~i] for i in range(len(s) // 2))
+def is_palindromic4(s):
+    # s[~i] is s[-(i + 1)]
+    return all(s[i] == s[-(i + 1)] for i in range(len(s) // 2))
 if __name__ == "__main__":
     print(is_palindromic2("aba") == is_palindromic("aba") == is_palindromic3("aba"))
     print(is_palindromic2("abba") == is_palindromic("abba") == is_palindromic3("aba"))
     print(is_palindromic2("abaa") == is_palindromic("abaa") == is_palindromic3("abaa"))
     print(is_palindromic2("akimika") == is_palindromic("akimika") == is_palindromic3("akimika"))
+    print(is_palindromic2("akimika") == is_palindromic("akimika") == is_palindromic4("akimika"))
