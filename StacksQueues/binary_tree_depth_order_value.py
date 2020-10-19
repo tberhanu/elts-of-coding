@@ -45,5 +45,5 @@ if __name__ == "__main__":
     tree = Tree(314, Tree(6, a, b), Tree(6, c, d))
     # lst = binary_tree_depth_order_value(tree)
     # print(lst)
-    lst2 = get_value_depth_wise_iteratively(tree)
-    print(lst2)
+    # lst2 = get_value_depth_wise_iteratively(tree)
+    # print(lst2)
