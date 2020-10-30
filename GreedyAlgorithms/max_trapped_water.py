@@ -27,12 +27,29 @@ def max_trapped_water(heights):
         if curr_water_content > max_water:
             max_water = curr_water_content
             indices = (i, j)
-        if heights[i] < heights[j]:
+        if heights[i] < heights[j]: # gives sense because the width is always constant, 1 unit
             i += 1
         else:
             j -= 1
 
     return max_water, indices
+
+def maxArea(height):
+        max_area = 0
+        i, j = 0, len(height) - 1
+        while i < j:
+            left_height = height[i]
+            right_height = height[j]
+            h = min(left_height, right_height)
+            width = j - i
+            area = h * width
+            if area > max_area:
+                max_area = area
+            if left_height <= right_height:
+                i += 1
+            else:
+                j -= 1
+        return max_area
 
 if __name__ == "__main__":
     heights = [1, 2, 1, 3, 4, 4, 5, 6, 2, 1, 3, 1, 3, 2, 1, 2, 4, 1]
@@ -40,3 +57,7 @@ if __name__ == "__main__":
     print("max water: ", max_water)
     print("start index: ", indices[0])
     print("end index: ", indices[1])
+
+    h = [1, 1]
+    a = maxArea(h)
+    print(a)

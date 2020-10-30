@@ -38,7 +38,7 @@ Hash tables:
                 c + d >> {'a': 4, 'b': 3}
                 c - d >> {'a': 2} # it keeps only POSITIVE COUNTS
                 c & d >> {'a': 1, 'b': 1} # INTERSECTION, takes min(c, d)
-                c | d >> {'a': 4, 'b': 4} # UNION, takes max(c, d)
+                c | d >> {'a': 3, 'b': 2} # UNION, takes max(c, d)
 
 
 
